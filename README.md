@@ -57,6 +57,17 @@ systemctl status zookeeper
      Docs: http://zookeeper.apache.org
 ```
 
+## maven报错解决办法：
+# 安装依赖（除了 Maven）
+mock -r epel-7-x86_64 --install python-devel cppunit-devel
+
+# 下载 Maven 3.8.8 到宿主机
+curl -O https://dlcdn.apache.org/maven/maven-3/3.8.8/binaries/apache-maven-3.8.8-bin.tar.gz
+
+# 解压到 mock 里
+mock -r epel-7-x86_64 --copyin apache-maven-3.8.8-bin.tar.gz /opt
+mock -r epel-7-x86_64 --shell "cd /opt && tar -xf apache-maven-3.8.8-bin.tar.gz && ln -sf /opt/apache-maven-3.8.8/bin/mvn /usr/bin/mvn"
+
 ## License
 
 All files in this repository are licensed under the Apache 2 license. Any
