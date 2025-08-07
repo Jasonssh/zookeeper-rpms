@@ -7,7 +7,7 @@ The spec has been tested on EL7 with the EPEL repo enabled and Fedora 30.
 
 Ensure packages are installed that provide tools to build the srpm and mock build the binary rpms.
 
-- `sudo yum install -y rpm-build rpmdevtools mock`
+- `sudo yum install -y rpm-build rpmdevtools `
 
 ## Building
 
@@ -16,7 +16,7 @@ Ensure packages are installed that provide tools to build the srpm and mock buil
 3. `rpmdev-setuptree`
 4. `spectool -g zookeeper.spec`
 5. `rpmbuild -bs --nodeps --define "_sourcedir $(pwd)" --define "_srcrpmdir $(pwd)" zookeeper.spec`
-6. `sudo mock <the srpm from step 5>`
+6. `rpmbuild -bb zookeeper.spec`
 
 ## Start/Stop Zookeeper service
 
