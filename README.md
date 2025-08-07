@@ -60,9 +60,20 @@ systemctl status zookeeper
      Docs: http://zookeeper.apache.org
 ```
 
-## maven报错解决办法：
-
-# 下载 Maven 3.8.8 到宿主机
+# maven报错解决办法：
+## 下载 Maven 3.8.8 到宿主机
 curl -O https://dlcdn.apache.org/maven/maven-3/3.8.8/binaries/apache-maven-3.8.8-bin.tar.gz
 tar xf apache-maven-3.8.8-bin.tar.gz
 ln -s apache-maven-3.8.8/bin/mvn /usr/bin/mvn
+# rpmbuild SOURCES中需要拷贝过去的包
+
+[root@localhost rpmbuild]# tree SOURCES/
+SOURCES/
+├── apache-zookeeper-3.9.3.tar.gz
+├── log4j.properties
+├── zoo.cfg
+├── zookeeper.service
+└── zookeeper.sysconfig
+
+0 directories, 5 files
+
