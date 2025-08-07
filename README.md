@@ -16,7 +16,10 @@ Ensure packages are installed that provide tools to build the srpm and mock buil
 3. `rpmdev-setuptree`
 4. `spectool -g zookeeper.spec`
 5. `rpmbuild -bs --nodeps --define "_sourcedir $(pwd)" --define "_srcrpmdir $(pwd)" zookeeper.spec`
-6. `rpmbuild -bb zookeeper.spec`
+6. `mkdir -p ~/rpmbuild/{BUILD,RPMS,SOURCES,SPECS,SRPMS}`
+7. `cp apache-zookeeper-3.9.3.tar.gz ~/rpmbuild/SOURCES/ && cp zookeeper.spec ~/rpmbuild/SPECS/`
+8. `cd ~/rpmbuild/SPECS`
+9. `rpmbuild -bb zookeeper.spec`
 
 ## Start/Stop Zookeeper service
 
