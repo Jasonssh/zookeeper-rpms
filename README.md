@@ -58,8 +58,6 @@ systemctl status zookeeper
 ```
 
 ## maven报错解决办法：
-# 安装依赖（除了 Maven）
-mock -r epel-7-x86_64 --install python-devel cppunit-devel
 
 # 下载 Maven 3.8.8 到宿主机
 curl -O https://dlcdn.apache.org/maven/maven-3/3.8.8/binaries/apache-maven-3.8.8-bin.tar.gz
